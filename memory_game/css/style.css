@@ -63,6 +63,11 @@ main {
   margin: 35px auto;
 }
 
+html {
+  position: relative;
+  min-height: 100%;
+}
+
 footer {
   text-transform: uppercase;
   padding-right: 20px;
@@ -72,10 +77,21 @@ footer {
   font-size: 14px;
   letter-spacing: 0.08em;
   font-weight: 500;
+  /* stick footer to the bottom 
+  http://jsfiddle.net/heggycastaneda/kutvzsp8/1/
+  */
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 40px;
+  width: 100%;
+  padding-bottom: 12px;
+  overflow: hidden;
 }
 
 footer p {
   font-family: Raleway; /*google ext font*/
+  /* margin-bottom: 0; */
 }
 
 .copyright {
