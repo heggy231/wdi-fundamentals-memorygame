@@ -2,25 +2,24 @@
 var cards = ["queen", "queen", "king", "king"];
 // current player's hand
 var cardsInPlay = [];
-
-// first item in cards
-var cardOne = cards[0];
-cardsInPlay.push(cardOne);
-
-console.log("User flipped " + cardOne);
-
-
-// third item in cards
-var cardTwo = cards[2];
-// 3rd item to current hand
-cardsInPlay.push(cardTwo);
-console.log("User flipped " + cardTwo);
-
-if (cardsInPlay.length === 2) {
+// function to store the steps to check for a match
+var checkForMatch = function() {
   // check for match equality between the two cards
   if (cardsInPlay[0] === cardsInPlay[1]) {
     alert("You found a match!");
   } else {
     alert("Sorry, try again.");
   }
-}
+};
+/* function to store all steps when the user flips a card
+- accepts 1 parameter: cardId (indexNumber)
+*/
+var flipCard = function(cardId) {
+  console.log("User flipped " + cards[cardId]);
+  cardsInPlay.push(cards[cardId]);
+  // when user flip both two cards
+  if (cardsInPlay.length === 2) {
+    checkForMatch();
+  }
+};
+
